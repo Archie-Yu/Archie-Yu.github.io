@@ -6,7 +6,7 @@
   <link href="http://mrseven.ml/atom.xml" rel="self"/>
   
   <link href="http://mrseven.ml/"/>
-  <updated>2021-04-27T02:28:05.442Z</updated>
+  <updated>2021-04-27T11:31:32.866Z</updated>
   <id>http://mrseven.ml/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Maven安装配置</title>
+    <link href="http://mrseven.ml/2021/04/27/Maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://mrseven.ml/2021/04/27/Maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-04-27T11:19:25.000Z</published>
+    <updated>2021-04-27T11:31:32.866Z</updated>
+    
+    <content type="html"><![CDATA[<p>maven的安装配置教程</p><span id="more"></span><h2 id="Maven安装及配置仓库"><a href="#Maven安装及配置仓库" class="headerlink" title="Maven安装及配置仓库"></a>Maven安装及配置仓库</h2><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol><li>下载压缩包：<a href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a></li><li>解压到安装目录，解压完成后，复制根目录，例如：D:\Program Files\Maven\<h4 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h4></li><li>配置MAVEN_HOME：D:\Program Files\Maven\</li><li>配置PATH：%MAVEN_HOME\bin<h4 id="建立respository"><a href="#建立respository" class="headerlink" title="建立respository"></a>建立respository</h4>默认在用户文件夹下，设置为自己的比较好，且不占用C盘空间。<br>在maven/conf/settings.xml里配置本地路径：<strong>respository路径</strong><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Program Files\Maven\Maven-Repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;maven的安装配置教程&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程环境配置" scheme="http://mrseven.ml/categories/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="maven" scheme="http://mrseven.ml/tags/maven/"/>
+    
+  </entry>
+  
+  <entry>
     <title>完美配置python及tensorflow,pytorch环境</title>
     <link href="http://mrseven.ml/2021/04/26/%E5%AE%8C%E7%BE%8E%E9%85%8D%E7%BD%AEpython%E5%8F%8Atensorflow-pytorch%E7%8E%AF%E5%A2%83/"/>
     <id>http://mrseven.ml/2021/04/26/%E5%AE%8C%E7%BE%8E%E9%85%8D%E7%BD%AEpython%E5%8F%8Atensorflow-pytorch%E7%8E%AF%E5%A2%83/</id>
     <published>2021-04-26T14:36:22.000Z</published>
-    <updated>2021-04-27T02:28:05.442Z</updated>
+    <updated>2021-04-27T11:18:37.875Z</updated>
     
-    <content type="html"><![CDATA[<p>完美配置python及tensorflow,pytorch环境，一劳永逸的方法</p><span id="more"></span><h2 id="安装Anaconda3"><a href="#安装Anaconda3" class="headerlink" title="安装Anaconda3"></a>安装Anaconda3</h2><p>下载链接：<a href="https://www.anaconda.com/products/individual#Downloads">Anaconda | Individual Edition</a></p><p>选适合自己系统的版本，一直下一步，最后一个把添加到环境变量的选项勾上。</p><p>查看是否安装镜像：<code>conda config --show</code></p><p>设置镜像：<code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</code></p><h2 id="安装Tensorflow"><a href="#安装Tensorflow" class="headerlink" title="安装Tensorflow"></a>安装Tensorflow</h2><p>官方链接：<a href="https://tensorflow.google.cn/install?hl=zh_cn">TensorFlow (google.cn)</a></p><h2 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h2><p>官方链接：<a href="https://pytorch.org/get-started/locally/">Start Locally | PyTorch</a></p><p>官方安装命令：<code>conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch</code></p><p>镜像安装命令：<code>conda install pytorch torchvision torchaudio cudatoolkit=10.2</code></p>]]></content>
+    <content type="html"><![CDATA[<p>完美配置python及tensorflow,pytorch环境，一劳永逸的方法</p><span id="more"></span><h2 id="安装Anaconda3"><a href="#安装Anaconda3" class="headerlink" title="安装Anaconda3"></a>安装Anaconda3</h2><p>下载链接：<a href="https://www.anaconda.com/products/individual#Downloads">Anaconda | Individual Edition</a></p><p>选适合自己系统的版本，一直下一步，最后一个把添加到环境变量的选项勾上。</p><p>查看是否安装镜像：<code>conda config --show</code></p><p>设置镜像：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br></pre></td></tr></table></figure><h2 id="安装Tensorflow"><a href="#安装Tensorflow" class="headerlink" title="安装Tensorflow"></a>安装Tensorflow</h2><p>官方链接：<a href="https://tensorflow.google.cn/install?hl=zh_cn">TensorFlow (google.cn)</a></p><h2 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h2><p>官方链接：<a href="https://pytorch.org/get-started/locally/">Start Locally | PyTorch</a></p><p>官方安装命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure><p>镜像安装命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=10.2</span><br></pre></td></tr></table></figure>]]></content>
     
     
     <summary type="html">&lt;p&gt;完美配置python及tensorflow,pytorch环境，一劳永逸的方法&lt;/p&gt;</summary>
