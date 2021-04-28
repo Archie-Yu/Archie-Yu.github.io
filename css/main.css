@@ -3275,11 +3275,11 @@ body {
 .popup {
   opacity: 0.85;
 }
-.post-body p a {
+.post-body a {
   color: #0593d3;
   border-bottom: none;
 }
-.post-body p a:hover {
+.post-body a:hover {
   color: #ff106c;
 }
 a,
