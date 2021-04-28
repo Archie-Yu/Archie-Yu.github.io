@@ -33,6 +33,35 @@
       </tags>
   </entry>
   <entry>
+    <title>C++字符串与其他类型的转换</title>
+    <url>/2021/04/13/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>string, char, int ,double的相互转换</p>
+<span id="more"></span>
+
+<h3 id="C-字符串和整数浮点数的转换："><a href="#C-字符串和整数浮点数的转换：" class="headerlink" title="C++字符串和整数浮点数的转换："></a>C++字符串和整数浮点数的转换：</h3><p>字符串转数字：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	&lt;cstring&gt;头文件</span></span><br><span class="line"><span class="comment">	stoi(str)：转int</span></span><br><span class="line"><span class="comment">	stod(str)：转double</span></span><br><span class="line"><span class="comment">	stof(str)：转float</span></span><br><span class="line"><span class="comment">	stol(str)：转long</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">stoi</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>, <span class="keyword">int</span> base = <span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">stol</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>, <span class="keyword">int</span> base = <span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">stof</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">stod</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>数字转为字符串：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// to_string(T value)：将T类型的数字值转为字符串。C++ 11提供</span></span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">int</span> value)</span></span>;</span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">long</span> value)</span></span>;</span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">double</span> value)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>字符串转为字符数组：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;abcdefghi&quot;</span>)</span></span>;</span><br><span class="line"><span class="built_in">strncpy</span>(buf, str.<span class="built_in">c_str</span>(), <span class="number">10</span>);</span><br><span class="line"><span class="comment">//constc= str.c_str();        //string类型转const char*类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种</span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;abcdefghi&quot;</span>)</span></span>;</span><br><span class="line">length = str.<span class="built_in">copy</span>(buf, <span class="number">9</span>);</span><br><span class="line">buf[length] = <span class="string">&#x27;\0&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>字符数组转字符串：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> ch[] = <span class="string">&quot;dfafa&quot;</span>;</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(ch)</span></span>;</span><br><span class="line">str = ch;</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(&amp;a[<span class="number">0</span>], &amp;a[<span class="number">4</span>])</span></span>;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>刷题</category>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ctype常用函数</title>
     <url>/2021/04/05/ctype%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p>isalpha(),isdigit(),islower(),tolower()等等</p>
@@ -88,6 +117,49 @@
       <tags>
         <tag>vscode</tag>
         <tag>powershell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jupyter notebook初始配置</title>
+    <url>/2021/04/03/jupyter-notebook%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h4 id="1，jupyter报错”–NotebookApp-iopub-data-rate-limit”"><a href="#1，jupyter报错”–NotebookApp-iopub-data-rate-limit”" class="headerlink" title="1，jupyter报错”–NotebookApp.iopub_data_rate_limit”"></a>1，jupyter报错”–NotebookApp.iopub_data_rate_limit”</h4><span id="more"></span>
+
+<p>jupyter notebook报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IOPub data rate exceeded.</span><br><span class="line">The notebook server will temporarily stop sending output</span><br><span class="line">to the client <span class="keyword">in</span> order to avoid crashing it.</span><br><span class="line">To change this limit, <span class="built_in">set</span> the config variable</span><br><span class="line">`--NotebookApp.iopub_data_rate_limit`.</span><br><span class="line"></span><br><span class="line">Current values:</span><br><span class="line">NotebookApp.iopub_data_rate_limit=<span class="number">1000000.0</span> (<span class="built_in">bytes</span>/sec)</span><br><span class="line">NotebookApp.rate_limit_window=<span class="number">3.0</span> (secs)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2，notebook修改默认初始打开目录"><a href="#2，notebook修改默认初始打开目录" class="headerlink" title="2，notebook修改默认初始打开目录"></a>2，notebook修改默认初始打开目录</h4><h4 id="3，解决方法"><a href="#3，解决方法" class="headerlink" title="3，解决方法"></a>3，解决方法</h4><ol>
+<li>==cmd==里面输入  <code>jupyter notebook --generate-config</code>  ，默认会在C盘用户目录下的==.jupyter==下生成一个配置文件  <code>jupyter_notebook_config.py</code>  然后修改配置文件。</li>
+<li><code>c.NotebookApp.iopub_data_rate_limit = 1000000000000000000</code>  后面的值尽量大。</li>
+<li><code>c.NotebookApp.notebook_dir = &#39;E:\Projects\condaFiles&#39;</code>  配置默认启动路径。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>anaconda</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>stl容器</title>
+    <url>/2021/04/05/stl%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<p>对stl里的常用数据结构方法进行整理，方便查看，有string，map，set</p>
+<span id="more"></span>
+<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="built_in">string</span>();</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">const</span> <span class="keyword">char</span>* s);</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">const</span> string&amp; str);</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">int</span> n, <span class="keyword">char</span> c); <span class="comment">//使用n个字符c初始化  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值函数：</span></span><br><span class="line">=</span><br><span class="line">string&amp; <span class="built_in">assign</span>(<span class="keyword">const</span> <span class="keyword">char</span>* s);</span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> n)</span></span>; <span class="comment">////把字符串s的前n个字符赋给当前的字符串</span></span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">const</span> string&amp; s)</span></span>;</span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> c)</span></span>; <span class="comment">// 把n个字符赋值给当前字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 拼接</span></span><br><span class="line">+=</span><br><span class="line"><span class="built_in">append</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">int</span> n); <span class="comment">//把字符串s的前n个字符连接到当前字符串结尾</span></span><br><span class="line"><span class="built_in">append</span>(<span class="keyword">const</span> string&amp; s);</span><br><span class="line"><span class="function">string&amp; <span class="title">append</span><span class="params">(<span class="keyword">const</span> string&amp; s, <span class="keyword">int</span> pos, <span class="keyword">int</span> n)</span></span>; <span class="comment">//字符串s中从pos开始的n个字符连接到字符串结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// find函数:查找第一次出现</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> string&amp; str, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> pos, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> c, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="comment">// rfind():查找最后出现的，用法类似find</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// replace函数</span></span><br><span class="line"><span class="function">string&amp; <span class="title">replace</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n, <span class="keyword">const</span> string&amp; str)</span></span>; <span class="comment">//替换从pos开始n个字符为字符串str</span></span><br><span class="line"></span><br><span class="line">* find查找是从左往后，rfind从右往左</span><br><span class="line">* find找到字符串后返回查找的第一个字符位置，找不到返回<span class="number">-1</span></span><br><span class="line">* replace在替换时，要指定从哪个位置起，多少个字符，替换成什么样的字符串</span><br><span class="line"></span><br><span class="line"><span class="comment">// compare()</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">const</span> string&amp; s)</span></span>; <span class="comment">// 与字符串比较</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符存取</span></span><br><span class="line">[]</span><br><span class="line"><span class="built_in">at</span>(<span class="keyword">int</span> n)</span><br><span class="line">    </span><br><span class="line"><span class="comment">// insert()</span></span><br><span class="line"><span class="function">string&amp; <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">const</span> <span class="keyword">char</span>* s)</span></span>;</span><br><span class="line"><span class="function">string&amp; <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n, <span class="keyword">char</span> c)</span></span>; <span class="comment">//在指定位置插入n个字符c</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// string子串</span></span><br><span class="line"><span class="function">string <span class="title">substr</span><span class="params">(<span class="keyword">int</span> pos = <span class="number">0</span>, <span class="keyword">int</span> n = npos)</span> <span class="keyword">const</span></span>;   <span class="comment">//返回由pos开始的n个字符组成的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//erase函数</span></span><br><span class="line">erase函数的原型如下：</span><br><span class="line">（<span class="number">1</span>）<span class="function">string&amp; <span class="title">erase</span> <span class="params">( <span class="keyword">size_t</span> pos = <span class="number">0</span>, <span class="keyword">size_t</span> n = npos )</span></span>;</span><br><span class="line">（<span class="number">2</span>）<span class="function">iterator <span class="title">erase</span> <span class="params">( iterator position )</span></span>;</span><br><span class="line">（<span class="number">3</span>）<span class="function">iterator <span class="title">erase</span> <span class="params">( iterator first, iterator last )</span></span>;</span><br><span class="line">也就是说有三种用法：</span><br><span class="line">（<span class="number">1</span>）<span class="built_in">erase</span>(pos,n); 删除从pos开始的n个字符，比如<span class="built_in">erase</span>(<span class="number">0</span>,<span class="number">1</span>)就是删除第一个字符</span><br><span class="line">（<span class="number">2</span>）<span class="built_in">erase</span>(position);删除position处的一个字符(position是个string类型的迭代器)</span><br><span class="line">（<span class="number">3</span>）<span class="built_in">erase</span>(first,last);删除从first到last之间的字符（first和last都是迭代器）</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造赋值</span></span><br><span class="line">set&lt;T&gt; st;</span><br><span class="line"><span class="built_in">set</span>(<span class="keyword">const</span> set &amp;st);</span><br><span class="line">set&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> set &amp;st);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 大小交换</span></span><br><span class="line"><span class="built_in">size</span>();</span><br><span class="line"><span class="built_in">empty</span>();</span><br><span class="line"><span class="built_in">swap</span>(st); <span class="comment">// 交换两个集合容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入删除</span></span><br><span class="line"><span class="built_in">insert</span>(elem);</span><br><span class="line"><span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">erase</span>(pos); <span class="comment">// 删除pos迭代器所指的元素，返回下一个元素的迭代器。</span></span><br><span class="line"><span class="built_in">erase</span>(beg, end); <span class="comment">// 删除区间[beg,end)的所有元素(迭代器) ，返回下一个元素的迭代器。</span></span><br><span class="line"><span class="built_in">erase</span>(elem); <span class="comment">// 删除容器中值为elem的元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找统计</span></span><br><span class="line"><span class="built_in">find</span>(key); <span class="comment">// 查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end()</span></span><br><span class="line"><span class="built_in">count</span>(key); <span class="comment">// 统计key的元素个数</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pair对组创建</span></span><br><span class="line">pair&lt;type, type&gt; p();</span><br><span class="line">pair&lt;type, type&gt; p = <span class="built_in">make_pair</span>(value1, value2);</span><br><span class="line">p.<span class="built_in">first</span>(),p.<span class="built_in">second</span>();</span><br><span class="line"><span class="comment">// 构造赋值</span></span><br><span class="line">map&lt;T1, T2&gt; mp;</span><br><span class="line">map&lt;<span class="keyword">const</span> map &amp;mp);</span><br><span class="line">map&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> map &amp;mp);</span><br><span class="line"></span><br><span class="line">// 大小交换</span><br><span class="line">size();</span><br><span class="line">empty();</span><br><span class="line">swap(st); //交换两个集合容器</span><br><span class="line"></span><br><span class="line">// 插入删除</span><br><span class="line">insert(elem); //只能插入对组</span><br><span class="line">map[key] = value;</span><br><span class="line"></span><br><span class="line">clear();</span><br><span class="line"></span><br><span class="line">erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。</span><br><span class="line">erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。</span><br><span class="line">erase(key); //删除容器中值为key的元素。</span><br><span class="line"></span><br><span class="line">// 查找统计</span><br><span class="line">find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();</span><br><span class="line">count(key); //统计key的元素个数</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>刷题</category>
+        <category>c++</category>
+      </categories>
+      <tags>
+        <tag>c++</tag>
+        <tag>stl</tag>
       </tags>
   </entry>
   <entry>
@@ -169,55 +241,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C++字符串与其他类型的转换</title>
-    <url>/2021/04/13/C-%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>string, char, int ,double的相互转换</p>
-<span id="more"></span>
-
-<h3 id="C-字符串和整数浮点数的转换："><a href="#C-字符串和整数浮点数的转换：" class="headerlink" title="C++字符串和整数浮点数的转换："></a>C++字符串和整数浮点数的转换：</h3><p>字符串转数字：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	&lt;cstring&gt;头文件</span></span><br><span class="line"><span class="comment">	stoi(str)：转int</span></span><br><span class="line"><span class="comment">	stod(str)：转double</span></span><br><span class="line"><span class="comment">	stof(str)：转float</span></span><br><span class="line"><span class="comment">	stol(str)：转long</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">stoi</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>, <span class="keyword">int</span> base = <span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">stol</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>, <span class="keyword">int</span> base = <span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">stof</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">stod</span><span class="params">(<span class="keyword">const</span> strings str, <span class="keyword">size_t</span>* pos = <span class="number">0</span>)</span></span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>数字转为字符串：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// to_string(T value)：将T类型的数字值转为字符串。C++ 11提供</span></span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">int</span> value)</span></span>;</span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">long</span> value)</span></span>;</span><br><span class="line"><span class="function">string <span class="title">to_string</span><span class="params">(<span class="keyword">double</span> value)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>字符串转为字符数组：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;abcdefghi&quot;</span>)</span></span>;</span><br><span class="line"><span class="built_in">strncpy</span>(buf, str.<span class="built_in">c_str</span>(), <span class="number">10</span>);</span><br><span class="line"><span class="comment">//constc= str.c_str();        //string类型转const char*类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种</span></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(<span class="string">&quot;abcdefghi&quot;</span>)</span></span>;</span><br><span class="line">length = str.<span class="built_in">copy</span>(buf, <span class="number">9</span>);</span><br><span class="line">buf[length] = <span class="string">&#x27;\0&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>字符数组转字符串：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> ch[] = <span class="string">&quot;dfafa&quot;</span>;</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(ch)</span></span>;</span><br><span class="line">str = ch;</span><br><span class="line"><span class="function">string <span class="title">str</span><span class="params">(&amp;a[<span class="number">0</span>], &amp;a[<span class="number">4</span>])</span></span>;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>刷题</category>
-        <category>c++</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Maven安装配置</title>
-    <url>/2021/04/27/Maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>maven的安装配置教程</p>
-<span id="more"></span>
-
-<h2 id="Maven安装及配置仓库"><a href="#Maven安装及配置仓库" class="headerlink" title="Maven安装及配置仓库"></a>Maven安装及配置仓库</h2><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol>
-<li>下载压缩包：<a href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a></li>
-<li>解压到安装目录，解压完成后，复制根目录，例如：D:\Program Files\Maven\<h4 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h4></li>
-<li>配置MAVEN_HOME：D:\Program Files\Maven\</li>
-<li>配置PATH：%MAVEN_HOME\bin<h4 id="建立respository"><a href="#建立respository" class="headerlink" title="建立respository"></a>建立respository</h4>默认在用户文件夹下，设置为自己的比较好，且不占用C盘空间。<br>在maven/conf/settings.xml里配置本地路径：<strong>respository路径</strong><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Program Files\Maven\Maven-Repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>编程环境配置</category>
-      </categories>
-      <tags>
-        <tag>maven</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>完美配置python及tensorflow,pytorch环境</title>
     <url>/2021/04/26/%E5%AE%8C%E7%BE%8E%E9%85%8D%E7%BD%AEpython%E5%8F%8Atensorflow-pytorch%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<p>完美配置python及tensorflow,pytorch环境，一劳永逸的方法</p>
@@ -240,27 +263,6 @@
       <tags>
         <tag>python</tag>
         <tag>Anaconda</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>stl容器</title>
-    <url>/2021/04/05/stl%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<p>对stl里的常用数据结构方法进行整理，方便查看，有string，map，set</p>
-<span id="more"></span>
-<h2 id="string"><a href="#string" class="headerlink" title="string"></a>string</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="built_in">string</span>();</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">const</span> <span class="keyword">char</span>* s);</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">const</span> string&amp; str);</span><br><span class="line"><span class="built_in">string</span>(<span class="keyword">int</span> n, <span class="keyword">char</span> c); <span class="comment">//使用n个字符c初始化  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 赋值函数：</span></span><br><span class="line">=</span><br><span class="line">string&amp; <span class="built_in">assign</span>(<span class="keyword">const</span> <span class="keyword">char</span>* s);</span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> n)</span></span>; <span class="comment">////把字符串s的前n个字符赋给当前的字符串</span></span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">const</span> string&amp; s)</span></span>;</span><br><span class="line"><span class="function">string&amp; <span class="title">assign</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">char</span> c)</span></span>; <span class="comment">// 把n个字符赋值给当前字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 拼接</span></span><br><span class="line">+=</span><br><span class="line"><span class="built_in">append</span>(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">int</span> n); <span class="comment">//把字符串s的前n个字符连接到当前字符串结尾</span></span><br><span class="line"><span class="built_in">append</span>(<span class="keyword">const</span> string&amp; s);</span><br><span class="line"><span class="function">string&amp; <span class="title">append</span><span class="params">(<span class="keyword">const</span> string&amp; s, <span class="keyword">int</span> pos, <span class="keyword">int</span> n)</span></span>; <span class="comment">//字符串s中从pos开始的n个字符连接到字符串结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// find函数:查找第一次出现</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> string&amp; str, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* s, <span class="keyword">int</span> pos, <span class="keyword">int</span> n)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> c, <span class="keyword">int</span> pos=<span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="comment">// rfind():查找最后出现的，用法类似find</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// replace函数</span></span><br><span class="line"><span class="function">string&amp; <span class="title">replace</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n, <span class="keyword">const</span> string&amp; str)</span></span>; <span class="comment">//替换从pos开始n个字符为字符串str</span></span><br><span class="line"></span><br><span class="line">* find查找是从左往后，rfind从右往左</span><br><span class="line">* find找到字符串后返回查找的第一个字符位置，找不到返回<span class="number">-1</span></span><br><span class="line">* replace在替换时，要指定从哪个位置起，多少个字符，替换成什么样的字符串</span><br><span class="line"></span><br><span class="line"><span class="comment">// compare()</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">const</span> string&amp; s)</span></span>; <span class="comment">// 与字符串比较</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符存取</span></span><br><span class="line">[]</span><br><span class="line"><span class="built_in">at</span>(<span class="keyword">int</span> n)</span><br><span class="line">    </span><br><span class="line"><span class="comment">// insert()</span></span><br><span class="line"><span class="function">string&amp; <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">const</span> <span class="keyword">char</span>* s)</span></span>;</span><br><span class="line"><span class="function">string&amp; <span class="title">insert</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> n, <span class="keyword">char</span> c)</span></span>; <span class="comment">//在指定位置插入n个字符c</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// string子串</span></span><br><span class="line"><span class="function">string <span class="title">substr</span><span class="params">(<span class="keyword">int</span> pos = <span class="number">0</span>, <span class="keyword">int</span> n = npos)</span> <span class="keyword">const</span></span>;   <span class="comment">//返回由pos开始的n个字符组成的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//erase函数</span></span><br><span class="line">erase函数的原型如下：</span><br><span class="line">（<span class="number">1</span>）<span class="function">string&amp; <span class="title">erase</span> <span class="params">( <span class="keyword">size_t</span> pos = <span class="number">0</span>, <span class="keyword">size_t</span> n = npos )</span></span>;</span><br><span class="line">（<span class="number">2</span>）<span class="function">iterator <span class="title">erase</span> <span class="params">( iterator position )</span></span>;</span><br><span class="line">（<span class="number">3</span>）<span class="function">iterator <span class="title">erase</span> <span class="params">( iterator first, iterator last )</span></span>;</span><br><span class="line">也就是说有三种用法：</span><br><span class="line">（<span class="number">1</span>）<span class="built_in">erase</span>(pos,n); 删除从pos开始的n个字符，比如<span class="built_in">erase</span>(<span class="number">0</span>,<span class="number">1</span>)就是删除第一个字符</span><br><span class="line">（<span class="number">2</span>）<span class="built_in">erase</span>(position);删除position处的一个字符(position是个string类型的迭代器)</span><br><span class="line">（<span class="number">3</span>）<span class="built_in">erase</span>(first,last);删除从first到last之间的字符（first和last都是迭代器）</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 构造赋值</span></span><br><span class="line">set&lt;T&gt; st;</span><br><span class="line"><span class="built_in">set</span>(<span class="keyword">const</span> set &amp;st);</span><br><span class="line">set&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> set &amp;st);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 大小交换</span></span><br><span class="line"><span class="built_in">size</span>();</span><br><span class="line"><span class="built_in">empty</span>();</span><br><span class="line"><span class="built_in">swap</span>(st); <span class="comment">// 交换两个集合容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入删除</span></span><br><span class="line"><span class="built_in">insert</span>(elem);</span><br><span class="line"><span class="built_in">clear</span>();</span><br><span class="line"></span><br><span class="line"><span class="built_in">erase</span>(pos); <span class="comment">// 删除pos迭代器所指的元素，返回下一个元素的迭代器。</span></span><br><span class="line"><span class="built_in">erase</span>(beg, end); <span class="comment">// 删除区间[beg,end)的所有元素(迭代器) ，返回下一个元素的迭代器。</span></span><br><span class="line"><span class="built_in">erase</span>(elem); <span class="comment">// 删除容器中值为elem的元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找统计</span></span><br><span class="line"><span class="built_in">find</span>(key); <span class="comment">// 查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end()</span></span><br><span class="line"><span class="built_in">count</span>(key); <span class="comment">// 统计key的元素个数</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// pair对组创建</span></span><br><span class="line">pair&lt;type, type&gt; p();</span><br><span class="line">pair&lt;type, type&gt; p = <span class="built_in">make_pair</span>(value1, value2);</span><br><span class="line">p.<span class="built_in">first</span>(),p.<span class="built_in">second</span>();</span><br><span class="line"><span class="comment">// 构造赋值</span></span><br><span class="line">map&lt;T1, T2&gt; mp;</span><br><span class="line">map&lt;<span class="keyword">const</span> map &amp;mp);</span><br><span class="line">map&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> map &amp;mp);</span><br><span class="line"></span><br><span class="line">// 大小交换</span><br><span class="line">size();</span><br><span class="line">empty();</span><br><span class="line">swap(st); //交换两个集合容器</span><br><span class="line"></span><br><span class="line">// 插入删除</span><br><span class="line">insert(elem); //只能插入对组</span><br><span class="line">map[key] = value;</span><br><span class="line"></span><br><span class="line">clear();</span><br><span class="line"></span><br><span class="line">erase(pos); //删除pos迭代器所指的元素，返回下一个元素的迭代器。</span><br><span class="line">erase(beg, end); //删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。</span><br><span class="line">erase(key); //删除容器中值为key的元素。</span><br><span class="line"></span><br><span class="line">// 查找统计</span><br><span class="line">find(key); //查找key是否存在,若存在，返回该键的元素的迭代器；若不存在，返回set.end();</span><br><span class="line">count(key); //统计key的元素个数</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>刷题</category>
-        <category>c++</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
-        <tag>stl</tag>
       </tags>
   </entry>
   <entry>
@@ -287,25 +289,72 @@
       </tags>
   </entry>
   <entry>
-    <title>jupyter notebook初始配置</title>
-    <url>/2021/04/03/jupyter-notebook%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h4 id="1，jupyter报错”–NotebookApp-iopub-data-rate-limit”"><a href="#1，jupyter报错”–NotebookApp-iopub-data-rate-limit”" class="headerlink" title="1，jupyter报错”–NotebookApp.iopub_data_rate_limit”"></a>1，jupyter报错”–NotebookApp.iopub_data_rate_limit”</h4><span id="more"></span>
+    <title>Maven安装配置</title>
+    <url>/2021/04/27/Maven%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>maven的安装配置教程</p>
+<span id="more"></span>
 
-<p>jupyter notebook报错：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">IOPub data rate exceeded.</span><br><span class="line">The notebook server will temporarily stop sending output</span><br><span class="line">to the client <span class="keyword">in</span> order to avoid crashing it.</span><br><span class="line">To change this limit, <span class="built_in">set</span> the config variable</span><br><span class="line">`--NotebookApp.iopub_data_rate_limit`.</span><br><span class="line"></span><br><span class="line">Current values:</span><br><span class="line">NotebookApp.iopub_data_rate_limit=<span class="number">1000000.0</span> (<span class="built_in">bytes</span>/sec)</span><br><span class="line">NotebookApp.rate_limit_window=<span class="number">3.0</span> (secs)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2，notebook修改默认初始打开目录"><a href="#2，notebook修改默认初始打开目录" class="headerlink" title="2，notebook修改默认初始打开目录"></a>2，notebook修改默认初始打开目录</h4><h4 id="3，解决方法"><a href="#3，解决方法" class="headerlink" title="3，解决方法"></a>3，解决方法</h4><ol>
-<li>==cmd==里面输入  <code>jupyter notebook --generate-config</code>  ，默认会在C盘用户目录下的==.jupyter==下生成一个配置文件  <code>jupyter_notebook_config.py</code>  然后修改配置文件。</li>
-<li><code>c.NotebookApp.iopub_data_rate_limit = 1000000000000000000</code>  后面的值尽量大。</li>
-<li><code>c.NotebookApp.notebook_dir = &#39;E:\Projects\condaFiles&#39;</code>  配置默认启动路径。</li>
+<h2 id="Maven安装及配置仓库"><a href="#Maven安装及配置仓库" class="headerlink" title="Maven安装及配置仓库"></a>Maven安装及配置仓库</h2><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol>
+<li>下载压缩包：<a href="https://maven.apache.org/download.cgi">Maven – Download Apache Maven</a></li>
+<li>解压到安装目录，解压完成后，复制根目录，例如：D:\Program Files\Maven\<h4 id="配置环境变量："><a href="#配置环境变量：" class="headerlink" title="配置环境变量："></a>配置环境变量：</h4></li>
+<li>配置MAVEN_HOME：D:\Program Files\Maven\</li>
+<li>配置PATH：%MAVEN_HOME\bin<h4 id="建立respository"><a href="#建立respository" class="headerlink" title="建立respository"></a>建立respository</h4>默认在用户文件夹下，设置为自己的比较好，且不占用C盘空间。<br>在maven/conf/settings.xml里配置本地路径：<strong>respository路径</strong><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>D:\Program Files\Maven\Maven-Repository<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
-        <category>软件配置</category>
+        <category>编程环境配置</category>
       </categories>
       <tags>
-        <tag>anaconda</tag>
-        <tag>python</tag>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mysql5.7安装配置</title>
+    <url>/2021/04/28/Mysql5-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>mysql5.7的下载安装及初始配置教程</p>
+<span id="more"></span>
+
+<h2 id="MYSQL5-7-安装及初始化配置"><a href="#MYSQL5-7-安装及初始化配置" class="headerlink" title="MYSQL5.7 安装及初始化配置"></a>MYSQL5.7 安装及初始化配置</h2><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol>
+<li>下载安装==压缩包==：<a href="https://downloads.mysql.com/archives/community/">MySQL :: Download MySQL Community Server (Archived Versions)</a></li>
+<li>解压到要安装的目录，解压完成后进入目录，复制绝对路径。</li>
+</ol>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><ol>
+<li>将复制的环境变量，添加到系统 <strong>path</strong> 里面。</li>
+</ol>
+<h4 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h4><ol>
+<li><p>在解压目录下（和bin目录同级）下新建 <strong>my.ini</strong> 文件，配置以下语句：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir=D:\Program Files\MySQL\mysql-5.7.33-winx64\</span><br><span class="line">datadir=D:\Program Files\MySQL\mysql-5.7.33-winx64\data</span><br><span class="line">port=3306</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure>
+
+<p>解析：</p>
+<p>basedir：你的mysql解压根目录（带最后的 ****）    </p>
+<p>datadir：你的根目录\data（不用新建，会自动生成）</p>
+<p>最下面一句配置完成得注释，后面说</p>
+</li>
+<li><p>管理员命令打开命令行，可以在mysql根目录下按住shift+鼠标右键查看打开；</p>
+</li>
+<li><p>进入mysql的bin目录，执行以下语句安装服务；</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysqld -install</span><br></pre></td></tr></table></figure></li>
+<li><p>执行以下语句加载my.ini文件，进行初始配置，完成后生成data文件夹；</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysqld --initialize-insecure --user=mysql</span><br></pre></td></tr></table></figure></li>
+<li><p>执行以下语句启动mysql服务；</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure></li>
+<li><p>连接数据库，并修改密码，执行以下语句；</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p>执行完成后要求输入密码，<strong>（什么都别输入）</strong>，直接回车，成功连接进入mysql后修改密码，执行以下语句：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">updata mysql.user <span class="keyword">set</span> authentication_string<span class="operator">=</span>password(<span class="string">&#x27;123456&#x27;</span>) <span class="keyword">where</span> <span class="keyword">user</span><span class="operator">=</span><span class="string">&#x27;root&#x27;</span> <span class="keyword">and</span> Host<span class="operator">=</span><span class="string">&#x27;localhost&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>执行完刷新权限：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></li>
+<li><p>最后完成后打开my.ini文件，注释最后一行，前面加 # 来注释一行。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>编程环境配置</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
       </tags>
   </entry>
 </search>

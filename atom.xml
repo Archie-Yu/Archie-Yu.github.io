@@ -6,7 +6,7 @@
   <link href="http://mrseven.ml/atom.xml" rel="self"/>
   
   <link href="http://mrseven.ml/"/>
-  <updated>2021-04-27T11:31:32.866Z</updated>
+  <updated>2021-04-28T01:45:45.316Z</updated>
   <id>http://mrseven.ml/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql5.7安装配置</title>
+    <link href="http://mrseven.ml/2021/04/28/Mysql5-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://mrseven.ml/2021/04/28/Mysql5-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-04-28T01:17:41.000Z</published>
+    <updated>2021-04-28T01:45:45.316Z</updated>
+    
+    <content type="html"><![CDATA[<p>mysql5.7的下载安装及初始配置教程</p><span id="more"></span><h2 id="MYSQL5-7-安装及初始化配置"><a href="#MYSQL5-7-安装及初始化配置" class="headerlink" title="MYSQL5.7 安装及初始化配置"></a>MYSQL5.7 安装及初始化配置</h2><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol><li>下载安装==压缩包==：<a href="https://downloads.mysql.com/archives/community/">MySQL :: Download MySQL Community Server (Archived Versions)</a></li><li>解压到要安装的目录，解压完成后进入目录，复制绝对路径。</li></ol><h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4><ol><li>将复制的环境变量，添加到系统 <strong>path</strong> 里面。</li></ol><h4 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h4><ol><li><p>在解压目录下（和bin目录同级）下新建 <strong>my.ini</strong> 文件，配置以下语句：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir=D:\Program Files\MySQL\mysql-5.7.33-winx64\</span><br><span class="line">datadir=D:\Program Files\MySQL\mysql-5.7.33-winx64\data</span><br><span class="line">port=3306</span><br><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><p>解析：</p><p>basedir：你的mysql解压根目录（带最后的 ****）    </p><p>datadir：你的根目录\data（不用新建，会自动生成）</p><p>最下面一句配置完成得注释，后面说</p></li><li><p>管理员命令打开命令行，可以在mysql根目录下按住shift+鼠标右键查看打开；</p></li><li><p>进入mysql的bin目录，执行以下语句安装服务；</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld -install</span><br></pre></td></tr></table></figure></li><li><p>执行以下语句加载my.ini文件，进行初始配置，完成后生成data文件夹；</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize-insecure --user=mysql</span><br></pre></td></tr></table></figure></li><li><p>执行以下语句启动mysql服务；</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure></li><li><p>连接数据库，并修改密码，执行以下语句；</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure><p>执行完成后要求输入密码，<strong>（什么都别输入）</strong>，直接回车，成功连接进入mysql后修改密码，执行以下语句：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updata mysql.user <span class="keyword">set</span> authentication_string<span class="operator">=</span>password(<span class="string">&#x27;123456&#x27;</span>) <span class="keyword">where</span> <span class="keyword">user</span><span class="operator">=</span><span class="string">&#x27;root&#x27;</span> <span class="keyword">and</span> Host<span class="operator">=</span><span class="string">&#x27;localhost&#x27;</span>;</span><br></pre></td></tr></table></figure><p>执行完刷新权限：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></li><li><p>最后完成后打开my.ini文件，注释最后一行，前面加 # 来注释一行。</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;mysql5.7的下载安装及初始配置教程&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程环境配置" scheme="http://mrseven.ml/categories/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="Mysql" scheme="http://mrseven.ml/tags/Mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>Maven安装配置</title>
