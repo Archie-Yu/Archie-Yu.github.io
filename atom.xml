@@ -249,7 +249,7 @@
     <link href="http://mrseven.ml/2021/04/03/jupyter-notebook%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/"/>
     <id>http://mrseven.ml/2021/04/03/jupyter-notebook%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE/</id>
     <published>2021-04-03T10:09:20.000Z</published>
-    <updated>2021-04-15T03:38:59.970Z</updated>
+    <updated>2021-04-29T04:29:46.372Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1，jupyter报错”–NotebookApp-iopub-data-rate-limit”"><a href="#1，jupyter报错”–NotebookApp-iopub-data-rate-limit”" class="headerlink" title="1，jupyter报错”–NotebookApp.iopub_data_rate_limit”"></a>1，jupyter报错”–NotebookApp.iopub_data_rate_limit”</h4><span id="more"></span><p>jupyter notebook报错：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IOPub data rate exceeded.</span><br><span class="line">The notebook server will temporarily stop sending output</span><br><span class="line">to the client <span class="keyword">in</span> order to avoid crashing it.</span><br><span class="line">To change this limit, <span class="built_in">set</span> the config variable</span><br><span class="line">`--NotebookApp.iopub_data_rate_limit`.</span><br><span class="line"></span><br><span class="line">Current values:</span><br><span class="line">NotebookApp.iopub_data_rate_limit=<span class="number">1000000.0</span> (<span class="built_in">bytes</span>/sec)</span><br><span class="line">NotebookApp.rate_limit_window=<span class="number">3.0</span> (secs)</span><br></pre></td></tr></table></figure><h4 id="2，notebook修改默认初始打开目录"><a href="#2，notebook修改默认初始打开目录" class="headerlink" title="2，notebook修改默认初始打开目录"></a>2，notebook修改默认初始打开目录</h4><h4 id="3，解决方法"><a href="#3，解决方法" class="headerlink" title="3，解决方法"></a>3，解决方法</h4><ol><li>==cmd==里面输入  <code>jupyter notebook --generate-config</code>  ，默认会在C盘用户目录下的==.jupyter==下生成一个配置文件  <code>jupyter_notebook_config.py</code>  然后修改配置文件。</li><li><code>c.NotebookApp.iopub_data_rate_limit = 1000000000000000000</code>  后面的值尽量大。</li><li><code>c.NotebookApp.notebook_dir = &#39;E:\Projects\condaFiles&#39;</code>  配置默认启动路径。</li></ol>]]></content>
     
@@ -258,7 +258,7 @@
     
     
     
-    <category term="软件配置" scheme="http://mrseven.ml/categories/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/"/>
+    <category term="编程环境配置" scheme="http://mrseven.ml/categories/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
     
     <category term="anaconda" scheme="http://mrseven.ml/tags/anaconda/"/>
