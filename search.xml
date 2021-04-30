@@ -276,6 +276,34 @@
 <p>查看是否安装镜像：<code>conda config --show</code></p>
 <p>设置镜像：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br></pre></td></tr></table></figure>
+<h3 id="Anaconda常用命令："><a href="#Anaconda常用命令：" class="headerlink" title="Anaconda常用命令："></a>Anaconda常用命令：</h3><ol>
+<li><p>检查镜像channels(在用户文件夹下的.condarc里)文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --show channels</span><br></pre></td></tr></table></figure></li>
+<li><p>得到conda的版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda -V</span><br></pre></td></tr></table></figure></li>
+<li><p>查看当前设置了哪些虚拟环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure></li>
+<li><p>查看指定虚拟环境下的包：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda list --name [虚拟环境名]</span><br></pre></td></tr></table></figure></li>
+<li><p>创建一个新环境：</p>
+<ol>
+<li><p>创建一个新环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name [虚拟环境名] [python的版本] [需要的包]</span><br></pre></td></tr></table></figure></li>
+<li><p>从已有的环境克隆一个新环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda create --name [虚拟环境名] -- <span class="built_in">clone</span> [colne的环境]</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>激活(取消激活)指定虚拟环境环境：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda activate [虚拟环境名]</span><br><span class="line">conda deactivate [虚拟环境名]</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>设置在jupyter notebook里面可以使用虚拟环境的包：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install nb_conda_kernels</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>建议</strong>：推荐在conda里创建一个新环境，然后再新环境下安装以上包。</p>
 <h2 id="安装Tensorflow"><a href="#安装Tensorflow" class="headerlink" title="安装Tensorflow"></a>安装Tensorflow</h2><p>官方链接：<a href="https://tensorflow.google.cn/install?hl=zh_cn">TensorFlow (google.cn)</a></p>
 <h2 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h2><p>官方链接：<a href="https://pytorch.org/get-started/locally/">Start Locally | PyTorch</a></p>
 <p>官方安装命令：</p>
