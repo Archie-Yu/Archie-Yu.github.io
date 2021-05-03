@@ -6,7 +6,7 @@
   <link href="http://mrseven.ml/atom.xml" rel="self"/>
   
   <link href="http://mrseven.ml/"/>
-  <updated>2021-04-28T01:49:19.519Z</updated>
+  <updated>2021-05-03T03:07:12.608Z</updated>
   <id>http://mrseven.ml/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Idea常用快捷键</title>
+    <link href="http://mrseven.ml/2021/05/03/Idea%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>http://mrseven.ml/2021/05/03/Idea%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+    <published>2021-05-03T02:47:14.000Z</published>
+    <updated>2021-05-03T03:07:12.608Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录idea自己常用的快捷键</p><span id="more"></span><p>**</p><ul><li>Alt + Insert: 生成getter，setter、构造器等代码。</li><li>Ctrl + Alt + B: 查看类的具体实现。</li><li>Ctrl + H: 显示类结构图。</li><li>Ctrl + Shift + A: 可以查找所有Intellij的命令。</li><li>Ctrl + Alt + L: 格式化代码。</li><li>Ctrl + Alt + O: 格式化import列表。</li><li>Ctrl + R: 替换字符串。</li><li>Ctrl + H: 显示当前类的继承层次。</li><li>Alt + /: 自动完成。</li><li>Ctrl + Alt + V: 快捷生成对象。</li></ul><p>**</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;记录idea自己常用的快捷键&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程环境配置" scheme="http://mrseven.ml/categories/%E7%BC%96%E7%A8%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="idea" scheme="http://mrseven.ml/tags/idea/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql5.7安装配置</title>

@@ -198,6 +198,33 @@
       </tags>
   </entry>
   <entry>
+    <title>Idea常用快捷键</title>
+    <url>/2021/05/03/Idea%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<p>记录idea自己常用的快捷键</p>
+<span id="more"></span>
+<p>**</p>
+<ul>
+<li>Alt + Insert: 生成getter，setter、构造器等代码。</li>
+<li>Ctrl + Alt + B: 查看类的具体实现。</li>
+<li>Ctrl + H: 显示类结构图。</li>
+<li>Ctrl + Shift + A: 可以查找所有Intellij的命令。</li>
+<li>Ctrl + Alt + L: 格式化代码。</li>
+<li>Ctrl + Alt + O: 格式化import列表。</li>
+<li>Ctrl + R: 替换字符串。</li>
+<li>Ctrl + H: 显示当前类的继承层次。</li>
+<li>Alt + /: 自动完成。</li>
+<li>Ctrl + Alt + V: 快捷生成对象。</li>
+</ul>
+<p>**</p>
+]]></content>
+      <categories>
+        <category>编程环境配置</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mysql5.7安装配置</title>
     <url>/2021/04/28/Mysql5-7%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>mysql5.7的下载安装及初始配置教程</p>
